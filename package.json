@@ -1,0 +1,36 @@
+{
+  "name": "katalogo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "compilerOptions": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  },
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "db": "knex migrate:latest --knexfile knexfile.ts",
+    "db-rb": "knex migrate:rollback",
+    "heroku-postbuild": "cd client && yarn && yarn start"
+  },
+  "dependencies": {
+    "celebrate": "^13.0.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.5",
+    "sqlite3": "^5.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.9",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/multer": "^1.4.4",
+    "@types/node": "^14.6.4"
+  }
+}
